@@ -96,7 +96,7 @@ function rentword_options_page() {
         <?php endif; ?>
         
         <div class="rentword-admin-intro">
-            <h2><?php esc_html_e('🏠 Configuración de la API de Propiedades', 'rentword'); ?></h2>
+            <h2><?php esc_html_e(' Configuración de la API de Propiedades', 'rentword'); ?></h2>
             <p><?php esc_html_e('Conecta tu sitio con la API de Rentinno para mostrar propiedades automáticamente. Sigue los pasos a continuación:', 'rentword'); ?></p>
         </div>
         
@@ -106,7 +106,7 @@ function rentword_options_page() {
             ?>
             
             <div class="rentword-admin-section">
-                <h3 class="rentword-section-title"><?php esc_html_e('🔌 Conexión API', 'rentword'); ?></h3>
+                <h3 class="rentword-section-title"><?php esc_html_e(' Conexión API', 'rentword'); ?></h3>
                 
                 <table class="form-table" role="presentation">
                     <tbody>
@@ -156,7 +156,7 @@ function rentword_options_page() {
             </div>
             
             <div class="rentword-admin-section">
-                <h3 class="rentword-section-title"><?php esc_html_e('⚙️ Configuración Avanzada', 'rentword'); ?></h3>
+                <h3 class="rentword-section-title"><?php esc_html_e(' Configuración Avanzada', 'rentword'); ?></h3>
                 
                 <table class="form-table" role="presentation">
                     <tbody>
@@ -202,7 +202,7 @@ function rentword_options_page() {
             </div>
             
             <div class="rentword-admin-section">
-                <h3 class="rentword-section-title"><?php esc_html_e('💰 Configuración de Moneda', 'rentword'); ?></h3>
+                <h3 class="rentword-section-title"><?php esc_html_e(' Configuración de Moneda', 'rentword'); ?></h3>
             
             <table class="form-table" role="presentation">
                 <tbody>
@@ -243,19 +243,19 @@ function rentword_options_page() {
             </div>
             
             <div class="rentword-test-section">
-                <h3><?php esc_html_e('🔍 Probar Conexión API', 'rentword'); ?></h3>
+                <h3><?php esc_html_e(' Probar Conexión API', 'rentword'); ?></h3>
                 <p><?php esc_html_e('Antes de guardar, prueba que tu API esté funcionando correctamente:', 'rentword'); ?></p>
                 <button type="button" class="button button-large button-secondary" id="rentword-test-api">
-                    <?php esc_html_e('🚀 Probar Conexión Ahora', 'rentword'); ?>
+                    <?php esc_html_e(' Probar Conexión Ahora', 'rentword'); ?>
                 </button>
                 <button type="button" class="button button-large" id="rentword-clear-cache" style="margin-left: 10px;">
-                    <?php esc_html_e('🗑️ Limpiar Caché', 'rentword'); ?>
+                    <?php esc_html_e(' Limpiar Caché', 'rentword'); ?>
                 </button>
                 <div id="rentword-api-test-result" style="margin-top: 15px;"></div>
                 <div id="rentword-cache-result" style="margin-top: 15px;"></div>
             </div>
             
-            <?php submit_button(__('💾 Guardar Configuración', 'rentword'), 'primary large'); ?>
+            <?php submit_button(__(' Guardar Configuración', 'rentword'), 'primary large'); ?>
         </form>
     </div>
     
@@ -357,9 +357,9 @@ function rentword_options_page() {
                 .then(response => response.json())
                 .then(response => {
                     if (response.success) {
-                        let html = '<div class="notice notice-success inline"><p><strong>✅ ' + response.data.message + '</strong></p>';
+                        let html = '<div class="notice notice-success inline"><p><strong> ' + response.data.message + '</strong></p>';
                         if (response.data.debug) {
-                            html += '<details style="margin-top: 10px;"><summary style="cursor: pointer; font-weight: bold;">🔍 Ver detalles técnicos</summary>';
+                            html += '<details style="margin-top: 10px;"><summary style="cursor: pointer; font-weight: bold;"> Ver detalles técnicos</summary>';
                             html += '<pre style="background: #f5f5f5; padding: 10px; margin-top: 10px; overflow-x: auto;">';
                             html += 'Llaves encontradas en la respuesta:\n' + JSON.stringify(response.data.debug.response_keys, null, 2);
                             html += '\n\nNúmero de propiedades: ' + response.data.debug.property_count;
@@ -368,15 +368,15 @@ function rentword_options_page() {
                         }
                         resultDiv.innerHTML = html;
                     } else {
-                        resultDiv.innerHTML = '<div class="notice notice-error inline"><p><strong>❌ ' + response.data.message + '</strong></p></div>';
+                        resultDiv.innerHTML = '<div class="notice notice-error inline"><p><strong> ' + response.data.message + '</strong></p></div>';
                     }
                 })
                 .catch(() => {
-                    resultDiv.innerHTML = '<div class="notice notice-error inline"><p><strong>❌ <?php esc_html_e('Error de conexión. Verifica la URL y tu conexión a internet.', 'rentword'); ?></strong></p></div>';
+                    resultDiv.innerHTML = '<div class="notice notice-error inline"><p><strong> <?php esc_html_e('Error de conexión. Verifica la URL y tu conexión a internet.', 'rentword'); ?></strong></p></div>';
                 })
                 .finally(() => {
                     button.disabled = false;
-                    button.textContent = '🚀 <?php esc_html_e('Probar Conexión Ahora', 'rentword'); ?>';
+                    button.textContent = ' <?php esc_html_e('Probar Conexión Ahora', 'rentword'); ?>';
                 });
             });
         }
@@ -405,20 +405,20 @@ function rentword_options_page() {
                 .then(response => response.json())
                 .then(response => {
                     if (response.success) {
-                        resultDiv.innerHTML = '<div class="notice notice-success inline"><p><strong>✅ ' + response.data.message + '</strong></p></div>';
+                        resultDiv.innerHTML = '<div class="notice notice-success inline"><p><strong> ' + response.data.message + '</strong></p></div>';
                         setTimeout(() => {
                             resultDiv.innerHTML = '';
                         }, 3000);
                     } else {
-                        resultDiv.innerHTML = '<div class="notice notice-error inline"><p><strong>❌ ' + response.data.message + '</strong></p></div>';
+                        resultDiv.innerHTML = '<div class="notice notice-error inline"><p><strong> ' + response.data.message + '</strong></p></div>';
                     }
                 })
                 .catch(() => {
-                    resultDiv.innerHTML = '<div class="notice notice-error inline"><p><strong>❌ <?php esc_html_e('Error al limpiar el caché.', 'rentword'); ?></strong></p></div>';
+                    resultDiv.innerHTML = '<div class="notice notice-error inline"><p><strong> <?php esc_html_e('Error al limpiar el caché.', 'rentword'); ?></strong></p></div>';
                 })
                 .finally(() => {
                     button.disabled = false;
-                    button.textContent = '🗑️ <?php esc_html_e('Limpiar Caché', 'rentword'); ?>';
+                    button.textContent = ' <?php esc_html_e('Limpiar Caché', 'rentword'); ?>';
                 });
             });
         }

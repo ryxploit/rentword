@@ -1,5 +1,5 @@
 /**
- * RentWord Pro - Main jQuery Scripts
+ * RentWord Theme - Main jQuery Scripts
  * Handles navigation, mobile menu, sticky header, sliders, and general interactions
  * @version 2.0.0 - Bootstrap 5 + jQuery 3.7+
  */
@@ -7,7 +7,7 @@
 (function($) {
     'use strict';
 
-    // Console log for debugging (remove in production)
+
     var debug = false;
     var log = function(msg) {
         if (debug && console) console.log('[RentWord] ' + msg);
@@ -428,7 +428,7 @@
     // Initialize all components
     var App = {
         init: function() {
-            log('=== RentWord Pro Initializing ===');
+            log('=== RentWord Theme Initializing ===');
             
             MobileMenu.init();
             StickyHeader.init();
@@ -441,7 +441,7 @@
             SmoothScroll.init();
             BackToTop.init();
             
-            log('=== RentWord Pro Ready ===');
+            log('=== RentWord Theme Ready ===');
         }
     };
 

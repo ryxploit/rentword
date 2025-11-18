@@ -1,5 +1,5 @@
 /**
- * RentWord Pro - Search & Filtering Module
+ * RentWord Theme - Search & Filtering Module
  * Handles advanced property search with AJAX and jQuery
  * @version 2.0.0 - Bootstrap 5 + jQuery 3.7+
  */

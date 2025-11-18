@@ -74,13 +74,13 @@ function initWhatsAppBooking() {
             year: 'numeric' 
         });
         
-        const message = `¡Hola! Me interesa reservar la propiedad:\n\n` +
-            `🏠 *${propertyTitle}*\n\n` +
-            `📅 *Entrada:* ${checkInFormatted}\n` +
-            `📅 *Salida:* ${checkOutFormatted}\n` +
-            `🌙 *Noches:* ${nights}\n` +
-            `👥 *Huéspedes:* ${guests}\n\n` +
-            `💰 *Total:* ${total}\n\n` +
+        const message = `Hola! Me interesa reservar la propiedad:\n\n` +
+            `${propertyTitle}\n\n` +
+            `Entrada: ${checkInFormatted}\n` +
+            `Salida: ${checkOutFormatted}\n` +
+            `Noches: ${nights}\n` +
+            `Huéspedes: ${guests}\n\n` +
+            `Total: ${total}\n\n` +
             `¿Está disponible?`;
         
         const whatsappUrl = `https://wa.me/${hostPhone}?text=${encodeURIComponent(message)}`;

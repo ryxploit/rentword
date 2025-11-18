@@ -1,9 +1,8 @@
 <?php
-/**
- * The header template file - Clean Modern Design
- *
- * @package RentWord
- */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -12,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php 
-    // Custom favicon from customizer
     $favicon_id = get_theme_mod('rentword_favicon');
     if ($favicon_id) {
         $favicon = wp_get_attachment_image_src($favicon_id, 'full');

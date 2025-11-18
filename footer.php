@@ -1,14 +1,12 @@
 <?php
-/**
- * The footer template file
- *
- * @package RentWord
- */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
 ?>
 
-    </div><!-- #content -->
+    </div>
 
-    <!-- Vacation Rental Footer -->
     <footer id="colophon" class="vr-footer">
         <div class="container">
             <!-- Footer Columns -->

@@ -1,9 +1,8 @@
 <?php
-/**
- * The sidebar template file
- *
- * @package RentWord
- */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
 
 if (!is_active_sidebar('sidebar-1')) {
     return;

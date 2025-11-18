@@ -1326,14 +1326,14 @@
     margin-right: 0.5rem;
 }
 
-.rw-icon-location::before { content: "📍"; }
-.rw-icon-bed::before { content: "🛏️"; }
-.rw-icon-bath::before { content: "🛁"; }
-.rw-icon-area::before { content: "📏"; }
+.rw-icon-location::before { content: "[L]"; }
+.rw-icon-bed::before { content: "[B]"; }
+.rw-icon-bath::before { content: "[Ba]"; }
+.rw-icon-area::before { content: "[A]"; }
 .rw-icon-check::before { content: "✓"; }
 .rw-icon-grid::before { content: "⊞"; }
 .rw-icon-list::before { content: "☰"; }
-.rw-icon-search::before { content: "🔍"; }
+.rw-icon-search::before { content: "S"; }
 .rw-icon-verified::before { content: "✓"; }
-.rw-icon-support::before { content: "💬"; }
-.rw-icon-price::before { content: "💰"; }
+.rw-icon-support::before { content: "?"; }
+.rw-icon-price::before { content: "$"; }

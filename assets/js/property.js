@@ -1,5 +1,5 @@
 /**
- * RentWord Pro - Property Details Module
+ * RentWord Theme - Property Details Module
  * Handles gallery, map, booking calculations, and interactions
  * @version 2.0.0 - Bootstrap 5 + jQuery 3.7+
  */

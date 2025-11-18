@@ -1,0 +1,1568 @@
+/**
+ * RentWord PRO - Vacation Rental Design System
+ * Professional WordPress Theme
+ * 
+ * @package RentWord
+ * @version 4.5.0
+ * @author Professional WordPress Developer
+ */
+
+/* ===================================
+   RENTWORD CORE VARIABLES
+   =================================== */
+
+:root {
+    /* RentWord Brand Colors */
+    --rw-primary: #FF385C;
+    --rw-accent: #00A699;
+    --rw-secondary: #FC642D;
+    --rw-dark: #484848;
+    --rw-gray: #767676;
+    
+    /* Neutrals */
+    --rw-black: #222222;
+    --rw-dark-gray: #484848;
+    --rw-light-gray: #B0B0B0;
+    --rw-border-gray: #DDDDDD;
+    --rw-bg-gray: #F7F7F7;
+    --rw-white: #FFFFFF;
+    
+    /* Functional Colors */
+    --rw-success: #008A05;
+    --rw-error: #C13515;
+    --rw-warning: #FFB400;
+    
+    /* Spacing */
+    --rw-radius: 12px;
+    --rw-radius-sm: 8px;
+    --rw-radius-lg: 16px;
+    --rw-spacing: 16px;
+    
+    /* Shadows */
+    --rw-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+    --rw-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    --rw-shadow-lg: 0 6px 16px rgba(0, 0, 0, 0.12);
+    --rw-shadow-xl: 0 6px 20px rgba(0, 0, 0, 0.2);
+    
+    /* Typography */
+    --rw-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    
+    /* Backwards compatibility */
+    --vr-rausch: #FF385C;
+    --vr-babu: #00A699;
+    --vr-arches: #FC642D;
+    --vr-hof: #484848;
+    --vr-foggy: #767676;
+    --vr-black: #222222;
+    --vr-dark-gray: #484848;
+    --vr-gray: #767676;
+    --vr-light-gray: #B0B0B0;
+    --vr-border-gray: #DDDDDD;
+    --vr-bg-gray: #F7F7F7;
+    --vr-white: #FFFFFF;
+    --vr-success: #008A05;
+    --vr-error: #C13515;
+    --vr-warning: #FFB400;
+    --vr-radius: 12px;
+    --vr-radius-sm: 8px;
+    --vr-radius-lg: 16px;
+    --vr-spacing: 16px;
+    --vr-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+    --vr-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    --vr-shadow-lg: 0 6px 16px rgba(0, 0, 0, 0.12);
+    --vr-shadow-xl: 0 6px 20px rgba(0, 0, 0, 0.2);
+    --vr-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    font-family: var(--rw-font);
+}
+
+/* ===================================
+   RENTWORD HEADER & NAVIGATION
+   =================================== */
+
+.rw-header,
+.vr-header {
+    background: #FFFFFF;
+    border-bottom: 1px solid #EBEBEB;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.2s ease;
+}
+
+.rw-header.scrolled,
+.vr-header.scrolled {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.rw-navbar,
+.vr-navbar {
+    padding: 16px 0;
+}
+
+.rw-logo,
+.vr-logo {
+    height: 32px;
+    width: auto;
+    display: block;
+}
+
+.rw-logo-text,
+.vr-logo-text {
+    color: var(--rw-primary);
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.rw-logo-text:hover,
+.vr-logo-text:hover {
+    opacity: 0.8;
+    color: var(--rw-primary);
+}
+    align-items: center;
+    gap: 8px;
+    padding: 5px 5px 5px 12px;
+    border: 1px solid var(--vr-border-gray);
+    border-radius: 21px;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    background: white;
+}
+
+.vr-user-menu:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.vr-user-menu i {
+    font-size: 16px;
+    color: var(--vr-dark-gray);
+}
+
+.vr-user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--vr-dark-gray);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* ===================================
+   RENTWORD SEARCH BAR
+   =================================== */
+
+.rw-search-container,
+.vr-search-container {
+    background: white;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rw-border-gray);
+}
+
+.rw-search-bar,
+.vr-search-bar {
+    max-width: 850px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid var(--rw-border-gray);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.rw-search-bar:hover,
+.vr-search-bar:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.rw-search-section,
+.vr-search-section {
+    flex: 1;
+    padding: 14px 24px;
+    cursor: pointer;
+    border-right: 1px solid var(--rw-border-gray);
+    transition: background-color 0.2s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 56px;
+}
+
+.rw-search-section:last-of-type,
+.vr-search-section:last-of-type {
+    border-right: none;
+}
+
+.rw-search-section:hover,
+.vr-search-section:hover {
+    background-color: var(--rw-bg-gray);
+}
+
+.rw-search-dates {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rw-search-date {
+    flex: 1 !important;
+    width: auto !important;
+}
+
+.rw-search-separator {
+    color: var(--rw-gray);
+    font-size: 13px;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.rw-search-label,
+.vr-search-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--rw-black);
+    margin-bottom: 4px;
+    display: block;
+}
+
+.rw-search-input,
+.vr-search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    color: var(--rw-dark-gray);
+    width: 100%;
+    padding: 0;
+}
+
+.rw-search-input::placeholder,
+.vr-search-input::placeholder {
+    color: var(--rw-gray);
+    font-size: 14px;
+}
+
+.rw-search-input:focus,
+.vr-search-input:focus {
+    background: transparent !important;
+    color: var(--rw-dark-gray);
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.rw-search-input:active,
+.vr-search-input:active {
+    background: transparent !important;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Remove autofill background color */
+.rw-search-input:-webkit-autofill,
+.rw-search-input:-webkit-autofill:hover,
+.rw-search-input:-webkit-autofill:focus,
+.rw-search-input:-webkit-autofill:active,
+.vr-search-input:-webkit-autofill,
+.vr-search-input:-webkit-autofill:hover,
+.vr-search-input:-webkit-autofill:focus,
+.vr-search-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: var(--rw-dark-gray) !important;
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+select.rw-search-input,
+select.vr-search-input {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.rw-search-btn,
+.vr-search-btn {
+    background: var(--rw-primary);
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.2s ease;
+    margin: 8px;
+    flex-shrink: 0;
+}
+
+.rw-search-btn:hover,
+.vr-search-btn:hover {
+    transform: scale(1.04);
+    background: #E31C5F;
+}
+
+.rw-search-btn i,
+.vr-search-btn i {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Guest Counter Styles */
+.rw-guest-counter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+
+.rw-counter-btn {
+    background: white;
+    border: 1px solid var(--rw-border-gray);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--rw-dark-gray);
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+    padding: 0;
+    line-height: 1;
+}
+
+.rw-counter-btn:hover {
+    background: var(--rw-bg-gray);
+    border-color: var(--rw-dark-gray);
+    transform: scale(1.05);
+}
+
+.rw-counter-btn:active {
+    transform: scale(0.95);
+}
+
+.rw-counter-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background: white;
+    border-color: var(--rw-border-gray);
+}
+
+.rw-counter-btn:disabled:hover {
+    transform: none;
+}
+
+.rw-counter-display {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--rw-dark-gray);
+    width: 40px;
+    text-align: center;
+    padding: 0;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.rw-counter-display::-webkit-inner-spin-button,
+.rw-counter-display::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.rw-counter-display:focus {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Date Range Input Styles */
+.rw-daterange-input {
+    cursor: pointer !important;
+}
+
+.rw-daterange-input:read-only {
+    cursor: pointer !important;
+    background: transparent !important;
+}
+
+/* Mobile responsive search bar */
+@media (max-width: 767px) {
+    .rw-search-bar,
+    .vr-search-bar {
+        flex-wrap: wrap;
+        border-radius: 20px;
+        gap: 0;
+    }
+    
+    .rw-search-section,
+    .vr-search-section {
+        flex: 1 1 50%;
+        padding: 12px 16px;
+        min-height: 50px;
+        border-right: none;
+        border-bottom: 1px solid var(--rw-border-gray);
+    }
+    
+    .rw-search-section:nth-child(odd),
+    .vr-search-section:nth-child(odd) {
+        border-right: 1px solid var(--rw-border-gray);
+    }
+    
+    .rw-search-section:nth-last-child(2),
+    .vr-search-section:nth-last-child(2) {
+        border-bottom: none;
+    }
+    
+    .rw-search-label,
+    .vr-search-label {
+        font-size: 11px;
+        margin-bottom: 3px;
+    }
+    
+    .rw-search-input,
+    .vr-search-input {
+        font-size: 13px;
+    }
+    
+    .rw-search-btn,
+    .vr-search-btn {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        margin: 6px;
+    }
+}
+
+/* Mobile Search Bar */
+@media (max-width: 767px) {
+    .vr-search-bar {
+        border-radius: 24px;
+        padding: 8px 16px;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .vr-search-section {
+        border-right: none;
+        padding: 8px 0;
+        flex: 1;
+    }
+    
+    .vr-search-section:hover {
+        background: transparent;
+    }
+    
+    .vr-search-input {
+        font-size: 14px;
+    }
+    
+    .vr-search-label {
+        display: none;
+    }
+    
+    .vr-search-btn {
+        width: 32px;
+        height: 32px;
+        margin-right: 0;
+    }
+}
+
+/* ===================================
+   VACATION RENTAL PROPERTY CARD (AUTHENTIC)
+   =================================== */
+
+.vr-property-card {
+    cursor: pointer;
+    transition: none;
+    margin-bottom: 0;
+    text-decoration: none;
+    display: block;
+}
+
+.vr-property-card:hover .vr-card-image img {
+    transform: scale(1.06);
+}
+
+/* Image Container */
+.vr-card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--vr-bg-gray);
+}
+
+.vr-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Favorite Heart Button */
+.vr-favorite-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease;
+}
+
+.vr-favorite-btn:hover {
+    transform: scale(1.1);
+}
+
+.vr-favorite-btn i {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.5);
+    -webkit-text-stroke: 2px white;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: all 0.2s ease;
+}
+
+.vr-favorite-btn:hover i {
+    -webkit-text-stroke: 2px white;
+}
+
+.vr-favorite-btn.active i {
+    color: var(--vr-rausch);
+    -webkit-text-stroke: 0;
+}
+
+/* Guest Favorite Badge */
+.vr-guest-favorite {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--vr-black);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1;
+}
+
+.vr-guest-favorite i {
+    color: var(--vr-rausch);
+    font-size: 14px;
+}
+
+/* Card Content */
+.vr-card-content {
+    padding-top: 8px;
+}
+
+.vr-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2px;
+}
+
+.vr-card-location {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--vr-black);
+    line-height: 1.25;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.vr-card-rating {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-left: 6px;
+}
+
+.vr-card-rating i {
+    color: var(--vr-black);
+    font-size: 11px;
+}
+
+.vr-card-rating-value {
+    color: var(--vr-black);
+    font-weight: 400;
+}
+
+.vr-card-description {
+    display: none;
+}
+
+.vr-card-dates {
+    font-size: 14px;
+    color: var(--vr-foggy);
+    line-height: 1.25;
+    margin-bottom: 4px;
+    margin-top: 2px;
+}
+
+.vr-card-price {
+    font-size: 14px;
+    color: var(--vr-black);
+    margin-top: 4px;
+    line-height: 1.25;
+}
+
+.vr-card-price strong {
+    font-weight: 600;
+}
+
+.vr-card-price span {
+    font-weight: 400;
+    color: var(--vr-black);
+}
+
+/* ===================================
+   VACATION RENTAL GRID LAYOUT
+   =================================== */
+
+.rw-properties-grid,
+.vr-properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 32px 20px;
+    padding: 24px 0;
+}
+
+/* Bootstrap Standard: sm (576px) = 2 columns */
+@media (min-width: 576px) {
+    .rw-properties-grid,
+    .vr-properties-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px 20px;
+    }
+}
+
+/* Bootstrap Standard: md (768px) = 3 columns */
+@media (min-width: 768px) {
+    .rw-properties-grid,
+    .vr-properties-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px 20px;
+    }
+}
+
+/* Bootstrap Standard: lg (992px) = 4 columns */
+@media (min-width: 992px) {
+    .rw-properties-grid,
+    .vr-properties-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px 20px;
+    }
+}
+
+/* Bootstrap Standard: xl (1200px) = 5 columns */
+@media (min-width: 1200px) {
+    .rw-properties-grid,
+    .vr-properties-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 32px 20px;
+    }
+}
+
+/* Bootstrap Standard: xxl (1400px) = 6 columns */
+@media (min-width: 1400px) {
+    .rw-properties-grid,
+    .vr-properties-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 32px 20px;
+    }
+}
+
+/* ===================================
+   VACATION RENTAL CATEGORIES TABS
+   =================================== */
+
+/* ===================================
+   VACATION RENTAL BUTTONS
+   =================================== */
+
+.btn-airbnb-primary {
+    background: var(--vr-rausch);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-airbnb-primary:hover {
+    background: #E31C5F;
+    transform: scale(1.02);
+    color: white;
+}
+
+.btn-airbnb-outline {
+    background: white;
+    color: var(--vr-black);
+    border: 1px solid var(--vr-black);
+    border-radius: 8px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-airbnb-outline:hover {
+    background: var(--vr-bg-gray);
+    color: var(--vr-black);
+}
+
+/* ===================================
+   VACATION RENTAL FILTERS BUTTON
+   =================================== */
+
+.vr-filters-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border: 1px solid var(--vr-border-gray);
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.vr-filters-btn:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.vr-filters-btn i {
+    font-size: 16px;
+}
+
+/* ===================================
+   VACATION RENTAL FOOTER
+   =================================== */
+
+.vr-footer {
+    background: var(--vr-bg-gray);
+    border-top: 1px solid var(--vr-border-gray);
+    padding: 48px 0 24px;
+    margin-top: 48px;
+}
+
+.vr-footer-section {
+    margin-bottom: 32px;
+}
+
+.vr-footer-widget {
+    margin-bottom: 20px;
+}
+
+.vr-footer-widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.vr-footer-widget ul li {
+    margin-bottom: 12px;
+}
+
+.vr-footer-widget a {
+    color: var(--vr-dark-gray);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.vr-footer-widget a:hover {
+    color: var(--vr-black);
+    text-decoration: underline;
+}
+
+.vr-footer-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--vr-black);
+    margin-bottom: 16px;
+}
+
+.vr-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.vr-footer-links li {
+    margin-bottom: 12px;
+}
+
+.vr-footer-links a {
+    color: var(--vr-dark-gray);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.vr-footer-links a:hover {
+    color: var(--vr-black);
+    text-decoration: underline;
+}
+
+.vr-footer-bottom {
+    border-top: 1px solid var(--vr-border-gray);
+    padding-top: 24px;
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 14px;
+    color: var(--vr-dark-gray);
+}
+
+.vr-footer-social {
+    display: flex;
+    gap: 16px;
+}
+
+.vr-footer-social a {
+    color: var(--vr-dark-gray);
+    font-size: 18px;
+    transition: color 0.2s ease;
+}
+
+.vr-footer-social a:hover {
+    color: var(--vr-black);
+}
+
+/* ===================================
+   VACATION RENTAL RESPONSIVE UTILITIES
+   =================================== */
+
+@media (max-width: 767px) {
+    .vr-navbar {
+        padding: 12px 0;
+    }
+    
+    .vr-properties-grid {
+        gap: 32px 0;
+        grid-template-columns: 1fr;
+    }
+    
+    .vr-card-location {
+        font-size: 15px;
+    }
+    
+    .vr-card-dates,
+    .vr-card-price {
+        font-size: 15px;
+    }
+    
+    .vr-card-rating {
+        font-size: 14px;
+    }
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
+
+.btn-vr-primary,
+.btn-vr-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    font-family: var(--rw-font);
+}
+
+.btn-vr-primary {
+    background: linear-gradient(to right, #E61E4D 0%, #E31C5F 50%, #D70466 100%);
+    color: white;
+    border: none;
+}
+
+.btn-vr-primary:hover {
+    background: linear-gradient(to right, #D01346 0%, #C7124F 50%, #BD005C 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 30, 77, 0.3);
+    color: white;
+}
+
+.btn-vr-outline {
+    background: white;
+    color: #222222;
+    border: 1px solid #222222;
+}
+
+.btn-vr-outline:hover {
+    background: #F7F7F7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #222222;
+}
+
+.btn-vr-primary:active,
+.btn-vr-outline:active {
+    transform: translateY(0);
+}
+
+/* WhatsApp Button */
+.btn-success {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    border: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    color: white;
+}
+
+.btn-success:active {
+    transform: translateY(0);
+}
+
+.btn-success i {
+    font-size: 1.2em;
+}
+
+/* ===================================
+   PROPERTY SINGLE PAGE
+   =================================== */
+
+/* Property Header */
+.vr-property-header {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.vr-property-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.vr-property-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+.vr-property-location i {
+    color: #ef4444;
+    font-size: 16px;
+}
+
+/* Badges */
+.vr-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.vr-badge-primary {
+    background: linear-gradient(135deg, #E61E4D 0%, #D70466 100%);
+    color: white;
+}
+
+.vr-badge-light {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+/* Price Badge */
+.vr-price-badge {
+    display: inline-flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    padding: 16px 24px;
+    border-radius: 12px;
+    border: 2px solid #fca5a5;
+}
+
+.vr-price-badge .price-amount {
+    font-size: 28px;
+    font-weight: 700;
+    color: #dc2626;
+    line-height: 1;
+}
+
+.vr-price-badge .price-label {
+    font-size: 13px;
+    color: #991b1b;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* Features Grid */
+.vr-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+}
+
+.vr-feature-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.vr-feature-card:hover {
+    border-color: #E61E4D;
+    box-shadow: 0 4px 12px rgba(230, 30, 77, 0.1);
+    transform: translateY(-2px);
+}
+
+.vr-feature-card .feature-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.vr-feature-card .feature-icon i {
+    font-size: 24px;
+    color: #dc2626;
+}
+
+.vr-feature-card .feature-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1;
+}
+
+.vr-feature-card .feature-label {
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+/* Section Card */
+.vr-section-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.3s ease;
+}
+
+.vr-section-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.vr-section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.vr-section-title i {
+    color: #E61E4D;
+}
+
+.vr-description-content {
+    color: #4b5563;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.vr-description-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Host Card */
+.vr-host-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.vr-host-card .host-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 3px solid #fecaca;
+}
+
+.vr-host-card .host-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vr-host-card .host-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vr-host-card .host-avatar-placeholder i {
+    font-size: 40px;
+    color: #dc2626;
+}
+
+.vr-host-card .host-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.vr-host-card .host-bio {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .vr-property-title {
+        font-size: 24px;
+    }
+    
+    .vr-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .vr-section-card {
+        padding: 20px;
+    }
+    
+    .vr-host-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ===================================
+   HOST FOOTER SECTION
+   =================================== */
+
+.vr-host-footer {
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.host-footer-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 3px solid #E61E4D;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.host-footer-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.host-footer-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.host-footer-avatar-placeholder i {
+    font-size: 48px;
+    color: #dc2626;
+}
+
+.host-footer-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #6b7280;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.host-footer-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.host-footer-bio {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .vr-host-footer {
+        padding: 24px;
+        text-align: center;
+    }
+    
+    .host-footer-avatar {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* ===================================
+   IMPROVED GALLERY WITH LIGHTBOX
+   =================================== */
+
+.rw-property-gallery {
+    position: relative;
+}
+
+/* Property Gallery Swiper Styles */
+.rw-property-gallery {
+    width: 100%;
+}
+
+.rw-gallery-main {
+    height: 600px;
+    border-radius: var(--rw-radius);
+    overflow: hidden;
+    box-shadow: var(--rw-shadow);
+    position: relative;
+}
+
+.rw-gallery-main .swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.rw-gallery-main .gallery-image {
+    width: 100%;
+    height: 100%;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.rw-gallery-main .gallery-image:hover {
+    transform: scale(1.02);
+}
+
+.rw-gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Swiper Navigation Buttons */
+.rw-gallery-main .swiper-button-next,
+.rw-gallery-main .swiper-button-prev {
+    background: rgba(255, 255, 255, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--rw-black);
+}
+
+.rw-gallery-main .swiper-button-next:after,
+.rw-gallery-main .swiper-button-prev:after {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.rw-gallery-main .swiper-pagination {
+    bottom: 20px;
+}
+
+.rw-gallery-main .swiper-pagination-fraction {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.rw-gallery-thumbs {
+    height: 100px;
+}
+
+.rw-gallery-thumbs .swiper-slide {
+    width: auto;
+}
+
+.rw-gallery-thumbs .gallery-thumb {
+    width: 120px;
+    height: 100px;
+    border-radius: var(--rw-radius-sm);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.rw-gallery-thumbs .gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rw-gallery-thumbs .swiper-slide-thumb-active .gallery-thumb {
+    border-color: var(--rw-primary);
+    transform: scale(1.05);
+}
+
+/* Lightbox */
+.rw-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: var(--rw-radius-sm);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: fixed;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: var(--rw-primary);
+    border-color: var(--rw-primary);
+    transform: scale(1.1);
+}
+
+.lightbox-close {
+    top: 20px;
+    right: 20px;
+}
+
+.lightbox-prev {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-next {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-counter {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+/* ===================================
+   FOOTER ENHANCEMENTS
+   =================================== */
+
+.vr-footer-text {
+    font-size: 14px;
+    color: var(--rw-gray);
+    line-height: 1.6;
+}
+
+.vr-footer-social-default {
+    display: flex;
+    gap: 12px;
+}
+
+.vr-footer-social-default a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--rw-bg-gray);
+    border-radius: 50%;
+    color: var(--rw-dark);
+    transition: all 0.3s ease;
+}
+
+.vr-footer-social-default a:hover {
+    background: var(--rw-primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Responsive Gallery */
+@media (max-width: 768px) {
+    .rw-gallery-main {
+        height: 400px;
+    }
+    
+    .rw-gallery-thumbs .gallery-thumb {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .lightbox-prev,
+    .lightbox-next {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+}

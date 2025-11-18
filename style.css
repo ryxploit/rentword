@@ -1,0 +1,274 @@
+/*
+Theme Name: RentWord PRO - Vacation Rental Theme
+Theme URI: https://rentword.com
+Description: Tema profesional de WordPress para rentas vacacionales. Diseño moderno y responsive con buscador funcional (Destino/Llegada/Salida/Huéspedes), property cards compactas y bonitas, sistema de ratings y favoritos. Auto-detección de API, grid responsive Bootstrap, zero configuración.
+Author: RentWord Team - Professional WordPress Developer
+Author URI: https://rentword.com
+Version: 4.13.3
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: rentword
+Tags: vacation-rental, real-estate, properties, booking, responsive, modern, professional, rental-property, marketplace, search, ratings, grid, spanish, bootstrap
+*/
+
+/* ==========================================================================
+   Global Styles
+   ========================================================================== */
+
+:root {
+    /* Colors */
+    --rw-primary: #FF5A5F;
+    --rw-primary-dark: #E4484D;
+    --rw-secondary: #00A699;
+    --rw-dark: #222222;
+    --rw-gray-dark: #484848;
+    --rw-gray: #767676;
+    --rw-gray-light: #EBEBEB;
+    --rw-white: #FFFFFF;
+    --rw-success: #00A699;
+    --rw-warning: #FFB400;
+    --rw-error: #C13515;
+    
+    /* Typography */
+    --rw-font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --rw-font-secondary: 'Circular', 'Helvetica Neue', Arial, sans-serif;
+    
+    /* Spacing */
+    --rw-spacing-xs: 0.25rem;
+    --rw-spacing-sm: 0.5rem;
+    --rw-spacing-md: 1rem;
+    --rw-spacing-lg: 1.5rem;
+    --rw-spacing-xl: 2rem;
+    --rw-spacing-xxl: 3rem;
+    
+    /* Border Radius */
+    --rw-radius-sm: 4px;
+    --rw-radius-md: 8px;
+    --rw-radius-lg: 12px;
+    --rw-radius-xl: 16px;
+    
+    /* Shadows */
+    --rw-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --rw-shadow-md: 0 2px 8px rgba(0, 0, 0, 0.12);
+    --rw-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.16);
+    --rw-shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.20);
+    
+    /* Container */
+    --rw-container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--rw-font-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--rw-dark);
+    background-color: var(--rw-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.rw-container {
+    max-width: var(--rw-container-width);
+    margin: 0 auto;
+    padding: 0 var(--rw-spacing-lg);
+}
+
+.rw-container-fluid {
+    width: 100%;
+    padding: 0 var(--rw-spacing-lg);
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--rw-spacing-md);
+    color: var(--rw-dark);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: var(--rw-spacing-md);
+}
+
+a {
+    color: var(--rw-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--rw-primary-dark);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.rw-btn {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.3px;
+}
+
+.rw-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.rw-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.rw-btn-primary {
+    background: linear-gradient(135deg, #FF5A5F 0%, #E4484D 100%);
+    color: var(--rw-white);
+    box-shadow: 0 4px 15px rgba(255, 90, 95, 0.3);
+}
+
+.rw-btn-primary:hover {
+    background: linear-gradient(135deg, #E4484D 0%, #D63C41 100%);
+    color: var(--rw-white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 90, 95, 0.4);
+}
+
+.rw-btn-secondary {
+    background: linear-gradient(135deg, #00A699 0%, #008B80 100%);
+    color: var(--rw-white);
+    box-shadow: 0 4px 15px rgba(0, 166, 153, 0.3);
+}
+
+.rw-btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--rw-primary);
+    color: var(--rw-primary);
+    box-shadow: none;
+}
+
+.rw-btn-outline:hover {
+    background-color: var(--rw-primary);
+    color: var(--rw-white);
+    box-shadow: 0 4px 15px rgba(255, 90, 95, 0.3);
+}
+
+.rw-btn-lg {
+    padding: 1.125rem 2.5rem;
+    font-size: 1.125rem;
+    border-radius: 14px;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+.rw-form-group {
+    margin-bottom: var(--rw-spacing-lg);
+}
+
+.rw-form-label {
+    display: block;
+    margin-bottom: var(--rw-spacing-sm);
+    font-weight: 700;
+    color: var(--rw-dark);
+    font-size: 0.938rem;
+    letter-spacing: 0.3px;
+}
+
+.rw-form-control {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+    border: 2px solid var(--rw-gray-light);
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #f9fafb;
+    font-family: var(--rw-font-primary);
+}
+
+.rw-form-control:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.rw-form-control::placeholder {
+    color: #9ca3af;
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+.rw-text-center { text-align: center; }
+.rw-text-left { text-align: left; }
+.rw-text-right { text-align: right; }
+
+.rw-mb-1 { margin-bottom: var(--rw-spacing-xs); }
+.rw-mb-2 { margin-bottom: var(--rw-spacing-sm); }
+.rw-mb-3 { margin-bottom: var(--rw-spacing-md); }
+.rw-mb-4 { margin-bottom: var(--rw-spacing-lg); }
+.rw-mb-5 { margin-bottom: var(--rw-spacing-xl); }
+
+.rw-mt-1 { margin-top: var(--rw-spacing-xs); }
+.rw-mt-2 { margin-top: var(--rw-spacing-sm); }
+.rw-mt-3 { margin-top: var(--rw-spacing-md); }
+.rw-mt-4 { margin-top: var(--rw-spacing-lg); }
+.rw-mt-5 { margin-top: var(--rw-spacing-xl); }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    
+    .rw-container {
+        padding: 0 var(--rw-spacing-md);
+    }
+}
